@@ -25,6 +25,7 @@ const weatherData = (address, url, callback) => {
 router.get('/', function (req, res, next) {
     res.json({
         message: "Hello /api route"
+
     })
 });
 
