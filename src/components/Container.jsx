@@ -3,6 +3,34 @@ import { Detail } from './Detail';
 
 class Container extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            address: "",
+            search: ""
+        };
+
+        this.setAddressValue = this.setAddressValue.bind(this);
+        this.setSearchValue = this.setSearchValue.bind(this);
+    }
+
+    setAddressValue(event) {
+        console.log("setAddressValue(): " + event.target.value)
+        this.setState({
+            address: this.state.search
+        });
+        event.preventDefault();
+    }
+
+    setSearchValue(event) {
+        let search = event.target.value
+        console.log("setSearchValue(): " + event.target.value)
+        this.setState({
+            search: search
+        });
+    }
+
     render() {
         return (
             <div className="container-fluid">
@@ -15,7 +43,18 @@ class Container extends React.Component {
                                         <div className="card bg-light border-info">
                                             <div className="card-body">
                                                 <div className="d-flex mb-2 ">
-                                                    <input type="text" className="form-control" aria-label="Default" placeholder="City Name" />
+                                                    <form className="col-md-12" onSubmit={this.setAddressValue}>
+                                                        <div class="form-row">
+                                                            <div class="input-group mb-3">
+                                                                <input className="form-control" type="text" value={this.state.search} onChange={this.setSearchValue} placeholder="City Name" />
+                                                                <div class="input-group-append">
+                                                                    <input className="btn btn-success" type="submit" value="Search" />
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </form>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -27,7 +66,7 @@ class Container extends React.Component {
                                             <div className="card bg-light border-info">
                                                 <div className="card-header bg-info text-white text-center">Card 1</div>
                                                 <div className="card-body">
-                                                    <Detail />
+                                                    <Detail address={this.state.address} />
                                                 </div>
                                             </div>
                                             <div className="card bg-light border-info">

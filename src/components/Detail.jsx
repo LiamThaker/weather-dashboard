@@ -4,13 +4,16 @@ class Detail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            address: "",
             detail: {}
         }
     }
 
-    componentDidMount() {
+    apiCall() {
         console.log("<Detail/> componentDidMount()");
-        fetch("http://localhost:3001/api/weather?address=galway")
+        // let url = "http://localhost:3001/api/weather?address=galway";
+        let url = `http://localhost:3001/api/weather?address=${this.state.address}`;
+        fetch(url)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -18,6 +21,7 @@ class Detail extends React.Component {
 
                     this.setState({
                         detail: result,
+                        address: this.props.address,
                     });
                 },
                 // Note: it's important to handle errors here
@@ -27,9 +31,20 @@ class Detail extends React.Component {
                     console.log(error);
                     this.setState({
                         detail: {},
+                        address: this.props.address,
                     });
                 }
             )
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.address !== prevState.address) {
+            this.apiCall();
+        }
+    }
+
+    componentDidMount() {
+        this.apiCall();
     }
 
     render() {
