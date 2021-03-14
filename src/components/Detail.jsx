@@ -63,7 +63,7 @@ class Detail extends React.Component {
 
     render() {
 
-        if (this.state.apiError == true) {
+        if (this.state.apiError === true) {
             return (
                 <div>
                     <p>{this.state.detail.error}</p>
@@ -74,23 +74,23 @@ class Detail extends React.Component {
             return (
                 <div>
                     <div className="row justify-content-center">
-                        <div class="col-md-4">
+                        <div className="col-md-4">
                             <div>{this.state.detail.name}</div>
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                        <div class="col-md-6">
+                        <div className="col-md-6">
                             <div>Forecast : {this.state.detail.forecast}</div>
                         </div>
-                        <div class="col-md-6">
+                        <div className="col-md-6">
                             <div>Temperature : {this.state.detail.temperature}</div>
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                        <div class="col-md-6">
+                        <div className="col-md-6">
                             <div>Pressure : {this.state.detail.pressure}</div>
                         </div>
-                        <div class="col-md-6">
+                        <div className="col-md-6">
                             <div>Humidity : {this.state.detail.humidity}</div>
                         </div>
                     </div>

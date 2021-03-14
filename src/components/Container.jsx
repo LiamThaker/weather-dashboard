@@ -68,7 +68,7 @@ class Container extends React.Component {
                                     <div className="col-md-10">
                                         <div className="card-deck">
                                             <div className="card bg-light border-info">
-                                                <div className="card-header bg-info text-white text-center">Card 1</div>
+                                                <div className="card-header bg-info text-white text-center">Weather</div>
                                                 <div className="card-body">
                                                     <Detail address={this.state.address} />
                                                 </div>
