@@ -27,24 +27,31 @@ router.get('/weather', (req, res) => {
         .then((response) => response.json())
         .then((data) => {
             if (!data.main || !data.main.temp || !data.name || !data.weather) {
-                res
-                    .status(data.cod)
-                    .send({
-                        code: data.cod,
-                        message: data.message,
-                    })
+                res.send({
+                    code: data.cod,
+                    error: data.message,
+                })
             }
             else {
                 const forecast = data.weather[0].description;
                 const temperature = data.main.temp;
+                const pressure = data.main.pressure;
+                const humidity = data.main.humidity;
                 const name = data.name;
-                console.log(`Today's forecast for ${name}: ${forecast}`);
-                console.log(`It's currently ${temperature}°C `);
+                const coords = data.coord;
+                const wind = data.wind;
+
+                // console.log(`Today's forecast for ${name}: ${forecast}`);
+                // console.log(`It's currently ${temperature}°C `);
                 res.send({
                     forecast: forecast,
                     temperature: temperature,
-                    name: name
-                })
+                    pressure: pressure,
+                    humidity: humidity,
+                    name: name,
+                    coords: coords,
+                    wind: wind
+                });
             }
         })
         .catch((error) => {

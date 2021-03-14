@@ -12,7 +12,7 @@ function Navbar() {
                     </li>
                 </ul>
                 <div className="navbar-text text-white">
-                    Genesys Assignment
+                    Weather Dashboard | Genesys Assignment
                 </div>
             </div>
         </nav>

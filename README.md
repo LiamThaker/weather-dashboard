@@ -1,4 +1,4 @@
-# Genesys assignment
+# Weather Dashboard | Genesys Assignment
 ![image1](https://raw.githubusercontent.com/LiamThaker/imc-assignment/main/screenshots/capture1.jpg)
 
 ## Available Scripts

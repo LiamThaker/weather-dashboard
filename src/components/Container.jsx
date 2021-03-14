@@ -16,10 +16,14 @@ class Container extends React.Component {
     }
 
     setAddressValue(event) {
-        console.log("setAddressValue(): " + event.target.value)
+        console.log("setAddressValue(): " + this.state.search)
+
+        // if (!this.state.search && this.state.search !== "") {
         this.setState({
             address: this.state.search
         });
+
+        // }
         event.preventDefault();
     }
 
@@ -42,12 +46,12 @@ class Container extends React.Component {
                                     <div className="col-md-5">
                                         <div className="card bg-light border-info">
                                             <div className="card-body">
-                                                <div className="d-flex mb-2 ">
-                                                    <form className="col-md-12" onSubmit={this.setAddressValue}>
-                                                        <div class="form-row">
-                                                            <div class="input-group mb-3">
+                                                <div className="col-md-12">
+                                                    <form onSubmit={this.setAddressValue}>
+                                                        <div className="form-row">
+                                                            <div className="input-group mb-3">
                                                                 <input className="form-control" type="text" value={this.state.search} onChange={this.setSearchValue} placeholder="City Name" />
-                                                                <div class="input-group-append">
+                                                                <div className="input-group-append">
                                                                     <input className="btn btn-success" type="submit" value="Search" />
                                                                 </div>
                                                             </div>
@@ -61,7 +65,7 @@ class Container extends React.Component {
                                     </div>
                                 </div>
                                 <div className="row mt-3 justify-content-center">
-                                    <div className="col-md-12">
+                                    <div className="col-md-10">
                                         <div className="card-deck">
                                             <div className="card bg-light border-info">
                                                 <div className="card-header bg-info text-white text-center">Card 1</div>

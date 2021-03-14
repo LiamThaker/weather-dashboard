@@ -5,7 +5,8 @@ class Detail extends React.Component {
         super(props);
         this.state = {
             address: "",
-            detail: {}
+            detail: {},
+            apiError: false
         }
     }
 
@@ -19,19 +20,32 @@ class Detail extends React.Component {
                 (result) => {
                     console.log(result);
 
-                    this.setState({
-                        detail: result,
-                        address: this.props.address,
-                    });
+                    if (result.error) {
+                        this.setState({
+                            detail: result,
+                            address: this.props.address,
+                            apiError: true
+                        });
+                    }
+                    else {
+                        this.setState({
+                            detail: result,
+                            address: this.props.address,
+                            apiError: false
+                        });
+                    }
+
                 },
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
                 // exceptions from actual bugs in components.
                 (error) => {
+                    console.log("error!")
                     console.log(error);
                     this.setState({
                         detail: {},
                         address: this.props.address,
+                        apiError: true
                     });
                 }
             )
@@ -49,13 +63,42 @@ class Detail extends React.Component {
 
     render() {
 
-        return (
-            <div>
-                <p> forecast : {this.state.detail.forecast}</p>
-                <p> temperature : {this.state.detail.temperature}</p>
-                <p> name : {this.state.detail.name}</p>
-            </div>
-        );
+        if (this.state.apiError == true) {
+            return (
+                <div>
+                    <p>{this.state.detail.error}</p>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div>
+                    <div className="row justify-content-center">
+                        <div class="col-md-4">
+                            <div>{this.state.detail.name}</div>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div class="col-md-6">
+                            <div>Forecast : {this.state.detail.forecast}</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>Temperature : {this.state.detail.temperature}</div>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div class="col-md-6">
+                            <div>Pressure : {this.state.detail.pressure}</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>Humidity : {this.state.detail.humidity}</div>
+                        </div>
+                    </div>
+                </div>
+            );
+
+        }
+
     }
 }
 
