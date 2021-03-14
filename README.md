@@ -15,6 +15,9 @@ Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 <br/>
 Api [http://localhost:3001/api/weather](http://localhost:3001/api/weather?address=galway)
 
+### `yarn testServer`
+Jest tests on express
+
 <br/>
 <br/>
 <br/>

@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
     })
 });
 
-//localhost:3001/weather?address=lahore
+//localhost:3001/weather?address=galway
 router.get('/weather', (req, res) => {
     const address = req.query.address
     if (!address) {
@@ -61,5 +61,9 @@ router.get('/weather', (req, res) => {
         );
 
 });
+
+router.get('/test', async (req, res) => {
+    res.json({ message: 'pass!' })
+})
 
 module.exports = router;

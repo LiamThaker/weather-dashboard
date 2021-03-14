@@ -34,7 +34,8 @@
         "server": "cd server &&  node ./bin/www",
         "dev": "concurrently \"yarn run start\" \"yarn run server\"",
         "installReact": "yarn install",
-        "installServer": "cd server &&  yarn install"
+        "installServer": "cd server &&  yarn install",
+        "testServer": "cd server &&  yarn test"
     },
     "eslintConfig": {
         "extends": [
