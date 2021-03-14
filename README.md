@@ -1,11 +1,29 @@
 # Weather Dashboard | Genesys Assignment
-![image1](https://raw.githubusercontent.com/LiamThaker/imc-assignment/main/screenshots/capture1.jpg)
+![image1](https://raw.githubusercontent.com/LiamThaker/weather-dashboard/main/screenshots/capture1.jpg)
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn installServer`
+Installs packages required for expressjs into the server folder
+
+### `yarn server`
+Runs our expressjs server
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
+<br/>
+Api [http://localhost:3001/api/weather](http://localhost:3001/api/weather?address=galway)
+
+<br/>
+<br/>
+<br/>
+
+To run app in development mode:
+
+### `yarn installReact`
+Installs packages required for react
+
+### `yarn dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -22,18 +40,3 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn server`
-
-Runs the instance of `json-server` mocked REST API on `localhost:3001`.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
