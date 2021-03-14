@@ -1,5 +1,5 @@
 # Weather Dashboard | Genesys Assignment
-![image1](https://raw.githubusercontent.com/LiamThaker/weather-dashboard/main/screenshots/capture1.jpg)
+![screenshot](https://raw.githubusercontent.com/LiamThaker/weather-dashboard/main/screenshots/capture1.jpg)
 
 ## Available Scripts
 
@@ -10,6 +10,7 @@ Installs packages required for expressjs into the server folder
 
 ### `yarn server`
 Runs our expressjs server
+<br/>
 Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 <br/>
 Api [http://localhost:3001/api/weather](http://localhost:3001/api/weather?address=galway)
