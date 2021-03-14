@@ -65,7 +65,7 @@ class Container extends React.Component {
                                     </div>
                                 </div>
                                 <div className="row mt-3 justify-content-center">
-                                    <div className="col-md-10">
+                                    <div className="col-md-6">
                                         <div className="card-deck">
                                             <div className="card bg-light border-info">
                                                 <div className="card-header bg-info text-white text-center">Weather</div>
@@ -73,23 +73,11 @@ class Container extends React.Component {
                                                     <Detail address={this.state.address} />
                                                 </div>
                                             </div>
-                                            <div className="card bg-light border-info">
-                                                <div className="card-header bg-info text-white text-center">Card 2</div>
-                                                <div className="card-body">
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row mt-3 justify-content-center">
-                                    <div className="col-md-10">
-                                        <div className="card bg-light border-info">
-                                            <div className="card-header bg-info text-white text-center">Card 3</div>
-                                            <div className="card-body">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
