@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const fetch = require('node-fetch');
-const request = require('request');
+// const request = require('request');
 const config = require('../config');
 
 /* GET api listing. */

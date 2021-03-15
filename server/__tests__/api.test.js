@@ -1,5 +1,4 @@
 const app = require("../app");
-// const fetch = require('node-fetch');
 const supertest = require('supertest');
 const request = supertest(app);
 
@@ -36,5 +35,12 @@ it('GET /api/weather?address=', async done => {
     expect(response.status).toBe(200);
     // api will return message
     expect(response.body.error).toBe('You must enter address in search text box');
+    done();
+})
+
+it('GET /api/blahblahblah', async done => {
+    // Sends GET Request to fake endpoint
+    const response = await request.get('/api/blahblahblah');
+    expect(response.status).toBe(404);
     done();
 })
